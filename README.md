@@ -68,4 +68,6 @@ This project focuses on extensive data exploration and preparation using RDD, Da
 
 This project demonstrates the use of RDD, DataFrames, and SQL for comprehensive data analysis and preparation. The project successfully provided valuable insights into clinical trial and pharmaceutical data, showcasing the capabilities of Spark for large-scale data processing and analysis.
 
-For more detailed information, please refer to the project report included in the repository.
+**Contact Information:**
+- **Author:** [Dagogo Orifama]
+- **Email:** [dagoris2010@gmail.com]
