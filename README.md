@@ -1,65 +1,69 @@
-# RDD, DataFrames, SQL, and Machine Learning Data Science Project
+# Data Exploration and Preparation Using RDD, DataFrames, and SQL
 
-This project involves data exploration and machine learning using RDD, DataFrames, SQL, and various machine learning models. It is structured into two main tasks and demonstrates comprehensive data analysis, preprocessing, and model development on the Databricks platform.
+This part of the project focuses on data exploration and preparation using RDD, DataFrames, and SQL. The goal is to perform extensive data analysis on clinical trial and pharmaceutical datasets to extract valuable insights.
 
-## Task One: Data Exploration and Preparation
+## Setup and Environment
 
-### Description of Required Setup
-- Set up a Databricks account and created a cluster using the latest runtime.
-- Uploaded and unzipped datasets (`clinicaltrial_2021.csv` and `pharma.csv`) into the Databricks file system.
+- **Platform**: Databricks
+- **Cluster**: Created using the latest Databricks runtime (Scala 2.12 and Spark 3.3.1)
+- **Datasets**: `clinicaltrial_2021.csv` and `pharma.csv`
 
-### Data Cleaning and Preparation
-- Imported datasets into RDD and DataFrame formats.
-- Created views for SQL analysis.
-- Performed initial data cleaning to prepare for analysis.
+## Data Cleaning and Preparation
 
-### Problem-Specific Implementations
-1. **Problem One**: Implemented solutions using RDD, DataFrame, and SQL to count unique IDs.
-2. **Problem Two**: Counted occurrences of each type using RDD, DataFrame, and SQL.
-3. **Problem Three**: Extracted and counted conditions from datasets using RDD, DataFrame, and SQL.
-4. **Problem Four**: Identified sponsors not associated with pharmaceutical companies using RDD, DataFrame, and SQL.
-5. **Problem Five**: Analyzed completed studies by month and year using RDD, DataFrame, and SQL.
-6. **Further Analysis**: 
-    - Listed top 10 medications using RDD.
-    - Identified companies penalized for False Claims Act using DataFrame.
-    - Analyzed top sponsors not being pharmaceutical companies using SQL.
+1. **Uploading and Unzipping Datasets**: 
+    - Uploaded `clinicaltrial_2021.csv` and `pharma.csv` to the Databricks file system.
+    - Unzipped the files using command line operations in Databricks notebooks.
 
-## Task Two: Machine Learning Model Development
+2. **Importing Data into RDDs and DataFrames**: 
+    - Imported the datasets into RDDs using `sc.textFile`.
+    - Converted RDDs to DataFrames for easier manipulation and analysis.
+    - Created temporary views for SQL analysis using `createOrReplaceTempView`.
 
-### Setup Environment
-- Switched to Databricks Machine Learning platform.
-- Created a new cluster and Jupyter notebook for the project.
+## Problem-Specific Implementations
 
-### Importing and Description of Dataset
-- Uploaded `faultDataset.csv` containing sensor data from an industrial vibration sensor.
-- The dataset includes 20 sensor readings and a `fault_detected` column indicating machine faults.
+### Problem One: Count Unique IDs
+- **Objective**: Determine the count of unique IDs in the dataset.
+- **RDD Implementation**: Used `map` and `count` functions to process the data.
+- **DataFrame Implementation**: Utilized `select` and `distinct` methods followed by `count`.
+- **SQL Implementation**: Executed SQL queries to count distinct IDs.
 
-### Data Exploration and Cleaning
-- Imported the dataset into RDD and DataFrame formats.
-- Created views for SQL analysis.
-- Performed data exploration to evaluate minimum, average, and maximum values.
+### Problem Two: Count Occurrences of Each Type
+- **Objective**: Calculate the number of occurrences for each type of prescription.
+- **RDD Implementation**: Applied `countByValue` and sorted the results.
+- **DataFrame Implementation**: Used `groupBy` and `count` methods, then ordered by count.
+- **SQL Implementation**: Executed `GROUP BY` and `ORDER BY` SQL queries.
 
-### Data Preprocessing
-- Transformed data into a format suitable for machine learning using `RFormula`.
-- Split data into training and test sets.
+### Problem Three: Extract and Count Conditions
+- **Objective**: Identify and count the unique conditions listed in the dataset.
+- **RDD Implementation**: Split conditions by commas, removed whitespace, and counted occurrences.
+- **DataFrame Implementation**: Used `withColumn`, `split`, and `explode` to handle conditions.
+- **SQL Implementation**: Created a lateral view with `explode` and `split` functions for counting.
 
-### Developing Machine Learning Models
-- Implemented five machine learning models: Decision Tree, Linear SVC, Logistic Regression, Random Forest, and Gradient-Boosted Tree.
-- Evaluated models using accuracy metrics.
+### Problem Four: Identify Sponsors Not Associated with Pharmaceutical Companies
+- **Objective**: Determine sponsors that are not pharmaceutical companies.
+- **RDD Implementation**: Mapped and filtered sponsors, excluding known pharmaceutical companies.
+- **DataFrame Implementation**: Filtered and grouped DataFrame by sponsors, excluding pharmaceutical companies.
+- **SQL Implementation**: Nested subqueries to exclude pharmaceutical companies and count remaining sponsors.
 
-#### Decision Tree Classification Model
-- Achieved 95.55% accuracy with default hyperparameters.
-- Improved accuracy to 95.56% through hyperparameter tuning.
+### Problem Five: Analyze Completed Studies by Month and Year
+- **Objective**: Analyze the number of completed studies per month in a given year.
+- **RDD Implementation**: Filtered RDD for completed studies, extracted month and year, and counted by month.
+- **DataFrame Implementation**: Filtered DataFrame, extracted month, and grouped by month for counting.
+- **SQL Implementation**: Used SQL queries to filter by status and year, then grouped by month for counting.
 
-#### Other Classification Models
-- Linear SVC, Logistic Regression, Random Forest, and Gradient-Boosted Tree models were implemented.
-- Gradient-Boosted Tree achieved the highest accuracy of 99.67%.
+### Further Analysis
+- **Top 10 Medications**: 
+    - **RDD Implementation**: Mapped interventions, counted occurrences, and displayed top 10.
+- **Penalized Companies**: 
+    - **DataFrame Implementation**: Filtered DataFrame for False Claims Act violations, grouped by company, and counted occurrences.
+- **Top Sponsors**: 
+    - **SQL Implementation**: Executed subqueries to list top sponsors not being pharmaceutical companies.
 
-### Data Privacy, Ethical, and Legal Issues
-- Used publicly available datasets licensed for educational and research purposes.
+## Data Visualization
+
+- Utilized Matplotlib to create visual representations of the results from the various analyses.
+- Plotted the distribution of completed studies, occurrences of conditions, and sponsor analysis.
 
 ## Conclusion
 
-This project demonstrates the use of RDD, DataFrames, SQL, and machine learning models for comprehensive data analysis and model development. The Gradient-Boosted Tree model achieved the highest accuracy of 99.67% for predicting machine maintenance needs based on sensor data.
-
-For more detailed information, please refer to the project report included in the repository.
+This task demonstrates the use of RDD, DataFrames, and SQL for comprehensive data analysis and preparation. The project successfully provided valuable insights into clinical trial and pharmaceutical data, showcasing the capabilities of Spark for large-scale data processing and analysis.
