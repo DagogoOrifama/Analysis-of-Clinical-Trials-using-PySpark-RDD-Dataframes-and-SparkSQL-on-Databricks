@@ -1,6 +1,6 @@
 # Data Exploration and Preparation Using RDD, DataFrames, and SQL
 
-This part of the project focuses on data exploration and preparation using RDD, DataFrames, and SQL. The goal is to perform extensive data analysis on clinical trial and pharmaceutical datasets to extract valuable insights.
+This project focuses on extensive data exploration and preparation using RDD, DataFrames, and SQL. The goal is to analyze clinical trial and pharmaceutical datasets to extract valuable insights and understand the data better.
 
 ## Setup and Environment
 
@@ -66,4 +66,6 @@ This part of the project focuses on data exploration and preparation using RDD, 
 
 ## Conclusion
 
-This task demonstrates the use of RDD, DataFrames, and SQL for comprehensive data analysis and preparation. The project successfully provided valuable insights into clinical trial and pharmaceutical data, showcasing the capabilities of Spark for large-scale data processing and analysis.
+This project demonstrates the use of RDD, DataFrames, and SQL for comprehensive data analysis and preparation. The project successfully provided valuable insights into clinical trial and pharmaceutical data, showcasing the capabilities of Spark for large-scale data processing and analysis.
+
+For more detailed information, please refer to the project report included in the repository.
