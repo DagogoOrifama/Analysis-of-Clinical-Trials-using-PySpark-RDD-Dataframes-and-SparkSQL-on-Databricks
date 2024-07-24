@@ -1,11 +1,65 @@
-# Analysis-of-Clinical-Trials-using-PySpark-RDD-Dataframes-and-SparkSQL-on-Databricks
+# RDD, DataFrames, SQL, and Machine Learning Data Science Project
 
-This project centers around a comprehensive analysis of a dataset comprising clinical trials conducted over a three-year period. The analysis is complemented by an examination of pharmaceutical violations attributed to a specified list of pharmaceutical companies. Three distinct implementations were undertaken to ensure a thorough exploration of the data: Data Frame, Spark SQL, and Resilient Distributed Datasets (RDD). Furthermore, the project incorporates visualizations to effectively communicate and interpret the results derived from these diverse analytical approaches.
+This project involves data exploration and machine learning using RDD, DataFrames, SQL, and various machine learning models. It is structured into two main tasks and demonstrates comprehensive data analysis, preprocessing, and model development on the Databricks platform.
 
-In the initial phase, data processing and analysis were conducted using Data Frames, a high-level abstraction in frameworks like Apache Spark that facilitates structured data manipulation. This implementation aimed to leverage the inherent efficiency and expressiveness of Data Frames for a comprehensive understanding of the clinical trial data and pharmaceutical violations.
+## Task One: Data Exploration and Preparation
 
-Subsequently, Spark SQL, a module in Apache Spark for structured data processing, was employed as a key component of the project. This involved leveraging SQL queries to perform in-depth analysis on the integrated dataset, capitalizing on the declarative nature of SQL for intuitive and efficient exploration of relationships within the clinical trial and pharmaceutical violation datasets.
+### Description of Required Setup
+- Set up a Databricks account and created a cluster using the latest runtime.
+- Uploaded and unzipped datasets (`clinicaltrial_2021.csv` and `pharma.csv`) into the Databricks file system.
 
-Additionally, the project delved into the utilization of RDDs, a fundamental data structure in Apache Spark designed for distributed processing. This approach provided a lower-level, fine-grained control over data manipulation, enabling intricate analyses tailored to the specific requirements of the clinical trial and pharmaceutical violation datasets.
+### Data Cleaning and Preparation
+- Imported datasets into RDD and DataFrame formats.
+- Created views for SQL analysis.
+- Performed initial data cleaning to prepare for analysis.
 
-To enhance the interpretability of the findings, the project also integrated visualization techniques. Visual representations of the results were employed to convey complex patterns and trends uncovered through the Data Frame, Spark SQL, and RDD analyses. This multi-faceted approach ensures a comprehensive exploration of the clinical trial and pharmaceutical violation datasets, leveraging different frameworks and methodologies to glean valuable insights from the wealth of available data.
+### Problem-Specific Implementations
+1. **Problem One**: Implemented solutions using RDD, DataFrame, and SQL to count unique IDs.
+2. **Problem Two**: Counted occurrences of each type using RDD, DataFrame, and SQL.
+3. **Problem Three**: Extracted and counted conditions from datasets using RDD, DataFrame, and SQL.
+4. **Problem Four**: Identified sponsors not associated with pharmaceutical companies using RDD, DataFrame, and SQL.
+5. **Problem Five**: Analyzed completed studies by month and year using RDD, DataFrame, and SQL.
+6. **Further Analysis**: 
+    - Listed top 10 medications using RDD.
+    - Identified companies penalized for False Claims Act using DataFrame.
+    - Analyzed top sponsors not being pharmaceutical companies using SQL.
+
+## Task Two: Machine Learning Model Development
+
+### Setup Environment
+- Switched to Databricks Machine Learning platform.
+- Created a new cluster and Jupyter notebook for the project.
+
+### Importing and Description of Dataset
+- Uploaded `faultDataset.csv` containing sensor data from an industrial vibration sensor.
+- The dataset includes 20 sensor readings and a `fault_detected` column indicating machine faults.
+
+### Data Exploration and Cleaning
+- Imported the dataset into RDD and DataFrame formats.
+- Created views for SQL analysis.
+- Performed data exploration to evaluate minimum, average, and maximum values.
+
+### Data Preprocessing
+- Transformed data into a format suitable for machine learning using `RFormula`.
+- Split data into training and test sets.
+
+### Developing Machine Learning Models
+- Implemented five machine learning models: Decision Tree, Linear SVC, Logistic Regression, Random Forest, and Gradient-Boosted Tree.
+- Evaluated models using accuracy metrics.
+
+#### Decision Tree Classification Model
+- Achieved 95.55% accuracy with default hyperparameters.
+- Improved accuracy to 95.56% through hyperparameter tuning.
+
+#### Other Classification Models
+- Linear SVC, Logistic Regression, Random Forest, and Gradient-Boosted Tree models were implemented.
+- Gradient-Boosted Tree achieved the highest accuracy of 99.67%.
+
+### Data Privacy, Ethical, and Legal Issues
+- Used publicly available datasets licensed for educational and research purposes.
+
+## Conclusion
+
+This project demonstrates the use of RDD, DataFrames, SQL, and machine learning models for comprehensive data analysis and model development. The Gradient-Boosted Tree model achieved the highest accuracy of 99.67% for predicting machine maintenance needs based on sensor data.
+
+For more detailed information, please refer to the project report included in the repository.
